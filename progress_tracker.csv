@@ -1,6 +1,6 @@
 Date,Week,Day,Task,Status,Time_Min,Files_Created,Issues,Next_Action
 9/8/2025,1,1,Project_Structure,Completed,45,Directory structure,None,Git_setup
-9/9/2025,1,2,Git_Setup,,30,,,React_creation
+9/9/2025,1,2,Git_Setup,Completed,30,.gitignore,None,React_creation
 9/10/2025,1,3,React_Project,,45,,,API_integration
 9/11/2025,1,4,First_API_Call,,30,,,Component_structure
 9/12/2025,1,5,Basic_Components,,45,,,Week_2_planning
