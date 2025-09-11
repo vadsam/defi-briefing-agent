@@ -1,14 +1,19 @@
-.App {
+.App { 
   text-align: center;
   padding: 2rem;
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  min-height: 100vh;
+  background-size: cover;       /* Always stretch background */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-attachment: fixed; /* Optional: background stays still on scroll */
+  min-height: 100vh;            /* Always fill viewport height */
+  width: 100vw;                 /* Always fill viewport width */
   color: white;
+  box-sizing: border-box;
 }
 
 h1 {
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Responsive font scaling */
   background: linear-gradient(45deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16,10 +21,10 @@ h1 {
 
 .coins-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto responsive grid */
   gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 1rem;
+  justify-items: center;
 }
 
 .coin-card {
@@ -27,8 +32,12 @@ h1 {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .coin-card:hover {
@@ -38,12 +47,12 @@ h1 {
 
 .coin-card h3 {
   margin: 0 0 1rem 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #e2e8f0;
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2vw, 2rem); /* Scales with screen size */
   font-weight: bold;
   margin: 0.5rem 0;
   color: white;
@@ -60,4 +69,28 @@ h1 {
 
 .negative {
   color: #ef4444;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+
+  .coins-grid {
+    gap: 1rem;
+    grid-template-columns: 1fr; /* Single column on phones */
+  }
+}
+
+/* Ultra-wide screen handling (like 1920px+) */
+@media (min-width: 1600px) {
+  .coins-grid {
+    padding: 0 4rem;
+    gap: 2rem;
+  }
+
+  .coin-card {
+    max-width: 450px; /* Slightly wider cards on huge screens */
+  }
 }
