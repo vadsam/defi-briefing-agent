@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import MarketOverview from './components/dashboard/MarketOverview';  // Works with .jsx files
 import './App.css'
 
 function App() {
@@ -48,9 +49,14 @@ function App() {
             </div>
           ))}
         </div>
+
       )}
+      
+      {/* NEW: Your MarketOverview component */}
+      <MarketOverview />
     </div>
   )
 }
 
 export default App
+

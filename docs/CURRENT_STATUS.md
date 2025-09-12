@@ -1,3 +1,5 @@
+# Hi, continue Defi Briefing Agent Project
+
 # Current Status
 
 **Phase**: Week 1, Day 3-4 Completed
