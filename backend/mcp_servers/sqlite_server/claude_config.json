@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "sqlite-tracker": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\v.sambandhamani\\defi-briefing-agent\\backend\\mcp_servers\\sqlite_server\\server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\v.sambandhamani\\defi-briefing-agent\\backend"
+      }
+    }
+  }
+}
