@@ -18,7 +18,12 @@ import mcp.types as types
 class SQLiteMCPServer:
     def __init__(self, db_path: str = "project_data.db"):
         self.app = FastMCP("sqlite-tracker")
-        self.db_path = Path(db_path).absolute()
+        # Use path relative to this script's location
+        if not Path(db_path).is_absolute():
+            script_dir = Path(__file__).parent
+            self.db_path = (script_dir / db_path).absolute()
+        else:
+            self.db_path = Path(db_path).absolute()
         self.setup_database()
         self.setup_tools()
         self.setup_resources()
